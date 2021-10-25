@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2886709 */
+  src: url('iconfont.woff2?t=1634900357180') format('woff2'),
+       url('iconfont.woff?t=1634900357180') format('woff'),
+       url('iconfont.ttf?t=1634900357180') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back:before {
+  content: "\eca1";
+}
+
+.icon-music:before {
+  content: "\e600";
+}
+
+.icon-shared:before {
+  content: "\e601";
+}
+
+.icon-search:before {
+  content: "\e62f";
+}
+
+.icon-listen:before {
+  content: "\e642";
+}
+
+.icon-add:before {
+  content: "\e657";
+}
+
+.icon-musicer:before {
+  content: "\e65e";
+}
+
+.icon-setting:before {
+  content: "\e64b";
+}
+
+.icon-play-prev:before {
+  content: "\e78a";
+}
+
+.icon-play-next:before {
+  content: "\e7a5";
+}
+
+.icon-add-2:before {
+  content: "\e622";
+}
+
+.icon-dj:before {
+  content: "\e621";
+}
+
+.icon-love:before {
+  content: "\e86f";
+}
+
+.icon-volume:before {
+  content: "\e87a";
+}
+
+.icon-play-pause:before {
+  content: "\e629";
+}
+
+.icon-forward:before {
+  content: "\e652";
+}
+
+.icon-email:before {
+  content: "\e908";
+}
+
+.icon-file:before {
+  content: "\ec17";
+}
+
+.icon-min:before {
+  content: "\e60e";
+}
+
+.icon-closed:before {
+  content: "\eca0";
+}
+
+.icon-lrc:before {
+  content: "\e88a";
+}
+
+.icon-dowload:before {
+  content: "\e648";
+}
+
+.icon-max:before {
+  content: "\e70e";
+}
+
+.icon-play-start:before {
+  content: "\ea6e";
+}
+
+.icon-delete:before {
+  content: "\e8b6";
+}
+
+.icon-skin:before {
+  content: "\e63c";
+}
+
+.icon-hide:before {
+  content: "\e659";
+}
+
+.icon-user:before {
+  content: "\e682";
+}
+
