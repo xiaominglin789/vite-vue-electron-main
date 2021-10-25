@@ -18,4 +18,7 @@ export default defineComponent({
 .page {
   width: 100%;
 }
+.com {
+  width: 100%;
+}
 </style>

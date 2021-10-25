@@ -15,9 +15,10 @@
 
 <script setup lang="ts">
 import { ref, nextTick, provide, onMounted } from "vue";
-import { getBanner } from "../../api/banner";
+// import { getBanner } from "../../api/banner";
 import ComMenuPool from "../../components/menuPool/ComMenuPool.vue";
 import ComTopBar from "../../components/public/ComTopBar.vue";
+import { getDateString } from "../../utils/utils";
 
 const isRouterActive = ref(true);
 const menuPool = ref(null);
@@ -35,8 +36,9 @@ provide("reload", reload);
 onMounted(() => {
   // 首页加载banner数据
   // getBanner();
-  console.log(containerPool.value);
-  console.log(menuPool.value);
+  // console.log(containerPool.value);
+  // console.log(menuPool.value);
+  getDateString();
 })
 
 // 控制区域滚动
@@ -70,6 +72,8 @@ onMounted(() => {
     height: 100%;
     display: flex;
     margin-top: 40px;
+    padding-bottom: 112px;
+    box-sizing: border-box;
     .menu-pool {
       width: 20%;
       min-width: 160px;
@@ -77,13 +81,13 @@ onMounted(() => {
       overflow: auto;
       border: 1px solid blue;
       text-indent: 16px;
+      padding-bottom: 160px;
     }
     .container-pool {
       flex: 1;
-      height: 640px;
       overflow: auto;
       border: 1px solid red;
-      background-color: white; 
+      background-color: white;
     }
   }
   .player-pool {

@@ -3,6 +3,12 @@
     <com-menu-temp-vue title="推荐" :menu="recommendMenuData"></com-menu-temp-vue>
     <com-menu-temp-vue title="我的音乐" :menu="userMenuData"></com-menu-temp-vue>
     <com-menu-temp-vue title="我的歌单" :menu="userSongCateMenuData"></com-menu-temp-vue>
+    <com-menu-temp-vue title="推荐" :menu="recommendMenuData"></com-menu-temp-vue>
+    <com-menu-temp-vue title="我的音乐" :menu="userMenuData"></com-menu-temp-vue>
+    <com-menu-temp-vue title="我的歌单" :menu="userSongCateMenuData"></com-menu-temp-vue>
+    <com-menu-temp-vue title="推荐" :menu="recommendMenuData"></com-menu-temp-vue>
+    <com-menu-temp-vue title="我的音乐" :menu="userMenuData"></com-menu-temp-vue>
+    <com-menu-temp-vue title="我的歌单" :menu="userSongCateMenuData"></com-menu-temp-vue>
   </div>
 </template>
 
@@ -18,7 +24,7 @@ const recommendMenuData: Array<MenuType> = [
   },
   {
     title: "FM频道",
-    to: "/dj",
+    to: "/user-dj",
     icon: "",
   },
 ];
@@ -61,7 +67,6 @@ const userSongCateMenuData: Array<MenuType> = [
 
 .menu {
   width: 100%;
-  padding-bottom: 160px;
   color: $text-color-grey;
 }
 </style>

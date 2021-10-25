@@ -8,8 +8,11 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import type { FoundTabType } from '../../utils/types/tab';
 import ComTabs from '../../components/public/ComTabs.vue';
+
+const router = useRouter();
 
 const foundTabs: Array<FoundTabType> = [
   {
@@ -43,6 +46,8 @@ const foundTabs: Array<FoundTabType> = [
     to: "/found/music"
   },
 ];
+
+
 
 </script>
 

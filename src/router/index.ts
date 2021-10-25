@@ -46,9 +46,9 @@ const routes: RouteRecordRaw[] = [
         ]
       },
       {
-        path: "/dj",
-        component: () => import("../views/container/DJ.vue"),
-        name: "DJ",
+        path: "/user-dj",
+        component: () => import("../views/container/UserDJ.vue"),
+        name: "UserDJ",
       },
       {
         path: "/search",

@@ -8,9 +8,6 @@
       <li class="content-li" v-for="(child, index) in menu" :key="index">
         <router-link :to="child.to">{{ child.title }}</router-link>
       </li>
-      <li class="content-li">
-        <router-link to=""></router-link>
-      </li>
     </ul>
   </div>
 </template>
