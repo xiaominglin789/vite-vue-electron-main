@@ -6,7 +6,7 @@ const isDev = process.env.IS_DEV == "true" ? true : false;
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1024,
+    width: 1080,
     height: 640,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),

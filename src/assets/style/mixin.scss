@@ -1,6 +1,6 @@
 @mixin flex($direction: row) {
   display: flex;
-  direction: $direction;
+  flex-direction: $direction;
 }
 
 @mixin flex-column {
@@ -16,8 +16,10 @@
 @mixin ellipsis($line:1) {
   overflow : hidden;
   text-overflow: ellipsis;
-  white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: $line;
   -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  white-space: normal;
+  
 }

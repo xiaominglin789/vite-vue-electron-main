@@ -2,12 +2,12 @@ const config = {
   /** 获取推荐轮播图 */
   MUSIC_BANNER: "/banner/get?clientType=pc",
 
-  /** 热门歌单分类 */
-  MUSIC_PLAY_CATE_HOT: "/playlist/hot",
+  /** 热门推荐歌单分类 */
+  MUSIC_PLAY_LIST_RECOMMEND: "/top/playlist",
   /** 获取全部歌单分类 */
-  MUSIC_PLAY_CATE_LIST: "/playlist/catalogue",
-  /** 获取推荐歌单列表 */
-  MUSIC_PLAY_CATE_PERSONALIZED: "/personalized/playlist",
+  MUSIC_PLAY_LIST_LIST: "/playlist/catlist",
+  /** 个人-每日推荐歌单-需要登录 */
+  MUSIC_PLAY_LIST_PERSONALIZED: "/recommend/resource",
 
   /** 模糊搜索 */
   MUSIC_SEARCH: "/search",

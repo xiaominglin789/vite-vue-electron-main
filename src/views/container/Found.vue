@@ -56,7 +56,7 @@ const foundTabs: Array<FoundTabType> = [
   width: 100%;
   height: 100%;
   .content {
-    padding: 20px;
+    padding: 28px;
   }
 }
 </style>

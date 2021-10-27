@@ -53,7 +53,6 @@ onMounted(() => {
   height: 100%;
   position: relative;
   box-sizing: border-box;
-  border: 1px solid red;
   background-color: $app-bg-color-base;
   .top-bar-pool {
     width: 100%;
@@ -75,25 +74,22 @@ onMounted(() => {
     padding-bottom: 112px;
     box-sizing: border-box;
     .menu-pool {
-      width: 20%;
-      min-width: 160px;
+      width: 200px;
+      // max-width: 20%;
       height: 640px;
       overflow: auto;
-      border: 1px solid blue;
       text-indent: 16px;
       padding-bottom: 160px;
     }
     .container-pool {
       flex: 1;
       overflow: auto;
-      border: 1px solid red;
       background-color: white;
     }
   }
   .player-pool {
     width: 100%;
     height: 72px;
-    border: 1px solid orangered;
     position: fixed;
     left: 0;
     bottom: 0;

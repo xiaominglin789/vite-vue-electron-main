@@ -25,17 +25,17 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: "/playlist",
-            component: () => import("../views/container/FoundPlaylist.vue"),
+            component: () => import("../views/container/FoundPlaylists.vue"),
             name: "FoundPlaylist",
           },
           {
             path: "/dj",
-            component: () => import("../views/container/FoundPlaylist.vue"),
+            component: () => import("../views/container/FoundPlaylists.vue"),
             name: "FoundDJ",
           },
           {
             path: "/rank",
-            component: () => import("../views/container/FoundPlaylist.vue"),
+            component: () => import("../views/container/FoundPlaylists.vue"),
             name: "FoundRank",
           },
           {
