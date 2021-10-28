@@ -1,6 +1,6 @@
 import { get } from "../utils/http/http";
 import config from "../config/api";
-
+import type { recommendPlaylistType, playlistType } from "../utils/types/playlist";
 
 /**
  * 热门歌单分类
@@ -11,11 +11,21 @@ import config from "../config/api";
  * @returns 
  */
 const getRecommendPlaylists = (order: string="hot", cat: string="all", limit: number=10, offset: number=0) => {
-  return get(config.MUSIC_PLAY_LIST_RECOMMEND, { order, cat, limit, offset });
+  return get<recommendPlaylistType>(config.MUSIC_PLAY_LIST_RECOMMEND, { order, cat, limit, offset });
+}
+
+/**
+ * 根据id获取歌单详情
+ * @param id id
+ * @returns
+ */
+const  getPlaylistDetailById = (id: number) => {
+  return get<playlistType>(config.MUSIC_PLAY_LIST_DETAIL, { id: id });
 }
 
 export {
   getRecommendPlaylists,
+  getPlaylistDetailById
 }
 
 

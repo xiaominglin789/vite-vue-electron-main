@@ -179,6 +179,7 @@ const checkActiveIndex = (idx: number) => {
     width: 100%;
     cursor: pointer;
     img {
+      min-height: 150px;
       width: 100%;
     }
   }

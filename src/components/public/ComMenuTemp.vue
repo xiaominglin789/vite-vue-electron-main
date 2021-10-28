@@ -1,23 +1,17 @@
 <template>
   <div class="com menu-temp">
-    <!-- <slot name="menu-title-slot">
-      <h3 class="title" @click="onClick">{{title}}</h3>
-    </slot> -->
-    <h3 class="title" @click="onClick">{{title}}</h3>
+    <h3 class="title">{{title}}</h3>
     <ul class="content">
-      <li class="content-li" v-for="(child, index) in menu" :key="index">
-        <router-link :to="child.to">{{ child.title }}</router-link>
+      <li :class="['content-li', activeTitle==child.title?'active':'']" v-for="(child, index) in menu" :key="index" @click="onChangeMenu(child.title)">
+        <router-link :to="child.to"><i :class="['iconfont', child.icon]"></i> {{ child.title }}</router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import type { PropType } from "vue";
 import type { MenuType } from "../../utils/types/menu";
-
-const activeIndex = ref(1);
 
 defineProps({
   title: {
@@ -38,15 +32,20 @@ defineProps({
         icon: "x-xxx2"
       }
     ],
+  },
+  activeTitle: {
+    type: String,
+    default: ""
   }
 });
 
 const emit = defineEmits([
-  'my-click'
+  'onChangeMenu'
 ]);
 
-const onClick = () => {
-  emit('my-click');
+/** 切换菜单 */
+const onChangeMenu = (title: string) => {
+  emit('onChangeMenu', title);
 }
 
 </script>

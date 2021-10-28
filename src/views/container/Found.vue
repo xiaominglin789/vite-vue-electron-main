@@ -46,9 +46,6 @@ const foundTabs: Array<FoundTabType> = [
     to: "/found/music"
   },
 ];
-
-
-
 </script>
 
 <style lang="scss" scoped>

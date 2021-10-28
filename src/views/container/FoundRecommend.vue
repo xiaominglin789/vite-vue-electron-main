@@ -26,6 +26,7 @@ import ComPlaylist from "../../components/public/ComPlaylist .vue";
 import type { playlistType } from "../../utils/types/playlist";
 import { getRecommendPlaylists } from "../../api/playlist";
 import { useRouter } from "vue-router";
+// import { getPrivateFM } from "../../api/user";
 
 const playlists = ref<Array<playlistType>>([
   {
@@ -371,7 +372,8 @@ const playlists = ref<Array<playlistType>>([
 ]);
 const router = useRouter();
 
-onMounted(() => {
+onMounted(async () => {
+  // await getPrivateFM();
   console.log(playlists);
   setTimeout(async () => {
     // const res = await getRecommendPlaylist();

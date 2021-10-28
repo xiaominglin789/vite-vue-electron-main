@@ -60,6 +60,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import("../views/container/PlaylistDetail.vue"),
         name: "PlaylistDetail",
       },
+      {
+        path: "/404",
+        component: () => import("../views/container/404.vue"),
+        name: "404"
+      }
     ]
   },
 ];

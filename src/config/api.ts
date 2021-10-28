@@ -8,6 +8,8 @@ const config = {
   MUSIC_PLAY_LIST_LIST: "/playlist/catlist",
   /** 个人-每日推荐歌单-需要登录 */
   MUSIC_PLAY_LIST_PERSONALIZED: "/recommend/resource",
+  /** 根据id获取歌单详情 */
+  MUSIC_PLAY_LIST_DETAIL: "/playlist/detail",
 
   /** 模糊搜索 */
   MUSIC_SEARCH: "/search",
@@ -28,7 +30,10 @@ const config = {
   /** 电台个性推荐 */
   MUSIC_DJ_PERSONALIZED: "/dj/personalized/recommend",
   /** 电台热门 */
-  MUSIC_DJ_HOT: "/dj/hot"
+  MUSIC_DJ_HOT: "/dj/hot",
+
+  /** 私人 fm */
+  MUSIC_PRIVATE_FM: '/personal_fm',
 }
 
 export default config;
