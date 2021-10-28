@@ -24,7 +24,7 @@ const recommendMenuData: Array<MenuType> = [
   },
   {
     title: "FM频道",
-    to: "/user-dj",
+    to: "/user-fm",
     icon: "",
   },
 ];

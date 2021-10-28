@@ -9,10 +9,10 @@
       panel-class="panel-class"
     >
       <template v-slot:tool>
-        <a class="tool" href="">更多<i class="iconfont icon-forward"></i></a>
+        <span class="tool">更多<i class="iconfont icon-forward"></i></span>
       </template>
       <template v-slot:content>
-        <com-playlist v-for="(child, index) in playlists" :key="index"  :value="child"></com-playlist>
+        <com-playlist v-for="(child, index) in playlists" :key="index"  :value="child" @on-detail="onToDetal"></com-playlist>
       </template>
     </com-panel>
   </div>
@@ -24,7 +24,8 @@ import ComBanner from "../../components/public/ComBanner.vue";
 import ComPanel from "../../components/public/ComPanel.vue";
 import ComPlaylist from "../../components/public/ComPlaylist .vue";
 import type { playlistType } from "../../utils/types/playlist";
-import { getRecommendPlaylist } from "../../api/playlist";
+import { getRecommendPlaylists } from "../../api/playlist";
+import { useRouter } from "vue-router";
 
 const playlists = ref<Array<playlistType>>([
   {
@@ -368,6 +369,7 @@ const playlists = ref<Array<playlistType>>([
     }
   }
 ]);
+const router = useRouter();
 
 onMounted(() => {
   console.log(playlists);
@@ -376,6 +378,12 @@ onMounted(() => {
     console.log('set_time_out');
   }, 500);
 })
+
+const onToDetal = (id: number) => {
+  console.log("点击了: ", id);
+  // 页面跳转
+  router.push({ path: "/playlist-detail", query: { id } });
+}
 
 </script>
 
@@ -388,7 +396,7 @@ onMounted(() => {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     > .banners {
       width: 50%;
     }
@@ -404,10 +412,15 @@ onMounted(() => {
       }
       .tool {
         font-size: 14px;
-        color: $text-color-black;
+        color: $text-color-grey;
+        cursor: pointer;
         i {
           font-size: 14px;
         }
+      }
+      .tool:hover {
+        text-decoration: underline;
+        color: $text-color-black;
       }
     }
     .content {

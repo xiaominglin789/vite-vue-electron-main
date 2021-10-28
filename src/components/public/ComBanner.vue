@@ -1,5 +1,5 @@
 <template>
-  <div class="com banners">
+  <div class="com banners" @mouseenter="onMouseenterToBanner" @mouseleave="onMouseenterFromBanner">
     <!-- image容器 -->
     <transition name="fade">
       <div class="wrap" @click="onClickWrap">
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import type { PropType } from "vue";
 
 type bannerType = {
@@ -37,6 +37,15 @@ type bannerType = {
   typeTitle?: string;
   /** 文本颜色 */
   titleColor?: string;
+}
+
+type bannerConfigType = {
+  /** 切换间隔时间 */
+  time: number
+  /** 开始切换的延迟时间 */
+  delay: number
+  /** 是否循环切换 */
+  loop: boolean
 }
 
 const bannerTypeRoutePath = {
@@ -74,20 +83,51 @@ const props = defineProps({
       },
     ]
   },
+  config: {
+    type: Object as PropType<bannerConfigType>,
+    default: {
+      time: 5000,
+      delay: 1000,
+      loop: true
+    }
+  },
   indicator: {
     type: Object,
-    default: ()=>{}
+    default: () =>{}
   }
 });
 
 const activeIndex = ref(0);
 const activeImage = ref("");
 const bannerLen = ref(0);
+const bannerPlayStatus = ref(true);
+let intervalTimer: any = null;
 
 onMounted(() => {
   bannerLen.value = props.banners.length;
   activeImage.value = props.banners[activeIndex.value].imageUrl;
+  //
+  props.config.delay && setTimeout(()=>{}, props.config.delay);
+  intervalTimer = setInterval(() => {
+    bannerPlayStatus.value == true && onNext();
+    if (!props.config.loop && activeIndex.value === bannerLen.value - 1) {
+      console.log("xxxx");
+      clearInterval(intervalTimer);
+    }
+  }, props.config.time);
 })
+
+onUnmounted(() => {
+  intervalTimer = null;
+})
+
+const onMouseenterToBanner = () => {
+  bannerPlayStatus.value = false;
+}
+
+const onMouseenterFromBanner = () => {
+  bannerPlayStatus.value = true;
+}
 
 /** 点击item */
 const onClickWrap = () => {
@@ -173,7 +213,7 @@ const checkActiveIndex = (idx: number) => {
     line-height: 20px;
     background-color: rgba($color: #000000, $alpha: .1);
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 56px;
     .indicator-dot {

@@ -1,9 +1,6 @@
 <template>
-  <div class="com playlist" @click="onClick"  >
-    <img 
-      :src="value.coverImgUrl" 
-      @mouseenter="showRemark(true)"
-      @mouseleave="showRemark(false)">
+  <div class="com playlist" @click="onClick(value.id)" @mouseenter="showRemark(true)" @mouseleave="showRemark(false)">
+    <img :src="value.coverImgUrl">
     <p class="title">{{ value.name }}</p>
     <!-- remark -->
     <div v-show="remarkStatus" class="remark">
@@ -30,14 +27,14 @@ defineProps({
   }
 })
 
-const onClick = () => {
-  console.log("xasdsa");
+const emit = defineEmits(['onDetail']);
+
+const onClick = (targetId: number) => {
+  emit('onDetail', targetId);
 }
 
 const showRemark = (show: boolean) => {
   remarkStatus.value = show;
-  console.log(111);
-  
 }
 
 </script>
@@ -64,9 +61,10 @@ const showRemark = (show: boolean) => {
     font-size: 14px;
     text-align: left;
     @include ellipsis(2);
+    color: $text-color-grey;
   }
   .title:hover {
-    opacity: .9;
+    color: $text-color-link;
   }
   .remark {
     transition-duration: 1.2s;

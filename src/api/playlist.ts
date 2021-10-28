@@ -10,10 +10,12 @@ import config from "../config/api";
  * @param offset 默认 0
  * @returns 
  */
-const getRecommendPlaylist = (order: string="hot", cat: string="all", limit: number=10, offset: number=0) => {
+const getRecommendPlaylists = (order: string="hot", cat: string="all", limit: number=10, offset: number=0) => {
   return get(config.MUSIC_PLAY_LIST_RECOMMEND, { order, cat, limit, offset });
 }
 
 export {
-  getRecommendPlaylist,
+  getRecommendPlaylists,
 }
+
+

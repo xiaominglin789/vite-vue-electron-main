@@ -42,18 +42,23 @@ const routes: RouteRecordRaw[] = [
             path: "/singer",
             component: () => import("../views/container/FoundSinger.vue"),
             name: "FoundSinger",
-          }
+          },
         ]
       },
       {
-        path: "/user-dj",
-        component: () => import("../views/container/UserDJ.vue"),
-        name: "UserDJ",
+        path: "/user-fm",
+        component: () => import("../views/container/UserFM.vue"),
+        name: "UserFM",
       },
       {
         path: "/search",
         component: () => import("../views/container/Search.vue"),
         name: "Search"
+      },
+      {
+        path: "/playlist-detail",
+        component: () => import("../views/container/PlaylistDetail.vue"),
+        name: "PlaylistDetail",
       },
     ]
   },
