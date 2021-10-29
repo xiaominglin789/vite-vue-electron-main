@@ -6,6 +6,7 @@
         <com-menu-pool></com-menu-pool>
       </div>
       <div ref="containerPool" class="container-pool">
+        <!-- component -->
         <router-view v-if="isRouterActive"></router-view>
       </div>
     </div>
@@ -18,7 +19,6 @@ import { ref, nextTick, provide, onMounted } from "vue";
 // import { getBanner } from "../../api/banner";
 import ComMenuPool from "../../components/menuPool/ComMenuPool.vue";
 import ComTopBar from "../../components/public/ComTopBar.vue";
-import { getDateString } from "../../utils/utils";
 
 const isRouterActive = ref(true);
 const menuPool = ref(null);
@@ -38,7 +38,6 @@ onMounted(() => {
   // getBanner();
   // console.log(containerPool.value);
   // console.log(menuPool.value);
-  getDateString();
 })
 
 // 控制区域滚动

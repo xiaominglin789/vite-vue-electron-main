@@ -14,7 +14,12 @@ export default defineConfig({
         target: "https://autumnfish.cn",
         changeOrigin: true,
         rewrite: (path) => path.replace("/api", ""),
-      }
+      },
+      "/vapi": {
+        target: "http://music.163.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace("/vapi", "/api"),
+      },
     }
   }
 })

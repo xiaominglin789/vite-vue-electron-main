@@ -24,14 +24,14 @@ import ComBanner from "../../components/public/ComBanner.vue";
 import ComPanel from "../../components/public/ComPanel.vue";
 import ComPlaylist from "../../components/public/ComPlaylist .vue";
 import type { playlistType } from "../../utils/types/playlist";
-import { getRecommendPlaylists } from "../../api/playlist";
+// import { getRecommendPlaylists } from "../../api/playlist";
 import { useRouter } from "vue-router";
 // import { getPrivateFM } from "../../api/user";
 
 const playlists = ref<Array<playlistType>>([
   {
     /** 歌单id号 */
-    id: 1,
+    id: 6827562995,
     /** 歌单标题 */
     name: "歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介歌单简介",
     /** 歌单简介 */
@@ -376,8 +376,8 @@ onMounted(async () => {
   // await getPrivateFM();
   console.log(playlists);
   setTimeout(async () => {
-    // const res = await getRecommendPlaylist();
-    console.log('set_time_out');
+    // const res = await getRecommendPlaylists();
+    // console.log("res: ", res);
   }, 500);
 })
 

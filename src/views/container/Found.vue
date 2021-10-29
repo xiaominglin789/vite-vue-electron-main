@@ -1,6 +1,6 @@
 <template>
   <div class="page found">
-    <com-tabs :tabs="foundTabs"></com-tabs>
+    <com-tabs :tabs="foundTabs" width="86%"></com-tabs>
     <div class="content">
       <router-view></router-view>
     </div>
@@ -18,32 +18,32 @@ const foundTabs: Array<FoundTabType> = [
   {
     title: "个性推荐",
     id: 1,
-    to: "/found/recommend"
+    to: "/"
   },
   {
     title: "歌单",
     id: 2,
-    to: "/found/playlist"
+    to: "/playlist"
   },
   {
     title: "主播电台",
     id: 3,
-    to: "/found/dj"
+    to: "/dj"
   },
   {
     title: "排行榜",
     id: 4,
-    to: "/found/rank"
+    to: "/rank"
   },
   {
     title: "歌手",
     id: 5,
-    to: "/found/singer"
+    to: "/singer"
   },
   {
     title: "最新音乐",
     id: 6,
-    to: "/found/music"
+    to: "/music"
   },
 ];
 </script>

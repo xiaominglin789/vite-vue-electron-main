@@ -1,16 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
-// 默认配置
-console.log(import.meta.env.VITE_APP_AXIOS_BASE_URL);
-console.log(import.meta.env.VITE_APP_AXIOS_TIME_OUT);
-
-axios.defaults.baseURL = String(import.meta.env.VITE_APP_AXIOS_BASE_URL) || "";
 axios.defaults.timeout = Number(import.meta.env.VITE_APP_AXIOS_TIME_OUT) || 5000;
 axios.defaults.withCredentials = false;
 axios.defaults.headers.common["Content-Type"] = "application/json;charset=UTF-8";
 
 const http = axios.create();
-
 
 // 拦截器
 http.interceptors.request.use(
@@ -38,11 +32,14 @@ http.interceptors.response.use(
       return response.data;
     }
 
+    console.log("非正常响应: ", response);
     // 非成功返回正确响应的处理
     // 可以统一处理
     return Promise.reject(response);
   },
   (error: AxiosError) => {
+    console.log("非正常响应2: ", error);
+
     // 请求超时的处理
     if (error.code === "ECONNABORTED" && error.message.includes("timeout")) {
       return console.error("请求超时: ", error.message);

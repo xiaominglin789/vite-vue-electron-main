@@ -15,7 +15,7 @@ import ComMenuTempVue from '../public/ComMenuTemp.vue';
 const recommendMenuData: Array<MenuType> = [
   {
     title: "发现音乐",
-    to: "/found",
+    to: "/",
     icon: "icon-music",
   },
   {

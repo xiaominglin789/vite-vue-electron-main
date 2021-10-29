@@ -1,6 +1,6 @@
 <template>
-  <div class="com tabs">
-    <div :class="['content', child.id==foundTabActive?'active':'']" v-for="child in tabs" :key="child.id" @click="onClickTab(child.id)">
+  <div class="com tabs" :style="{'width':width}">
+    <div :class="['content', child.id==foundTabActive?'active':'']" v-for="child in tabs" :key="child.id" @click="onClickTab(child)">
       <p class="title">{{ child.title }}</p>
       <p class="icon">
         <i :class="['iconfont', child.icon?child.icon:'']"></i>
@@ -13,19 +13,28 @@
 import { ref } from "vue";
 import type { PropType } from "vue";
 import type { FoundTabType } from "../../utils/types/tab";
+import router from "../../router";
 
 const foundTabActive = ref(1);
 
 defineProps({
   tabs: {
     type: Array as PropType<Array<FoundTabType>>,
-    default: () => []
+    default: () => [],
+  },
+  width: {
+    type: String,
+    default: "100%",
   }
 });
 
-const onClickTab = (id: number) => {
-  console.log("点击了id: ", id);
+const onClickTab = (child: FoundTabType) => {
+  console.log("点击了id: ", child.id);
+
   // 路由跳转
+  if (child.to) {
+    router.push(child.to);
+  }
 }
 
 </script>
@@ -34,7 +43,7 @@ const onClickTab = (id: number) => {
 @import "../../assets/style/import.scss";
 
 .tabs {
-  width: 86%;
+  width: 100%;
   height: 36px;
   margin: 0 auto;
   @include flex-center;
