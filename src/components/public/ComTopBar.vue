@@ -119,6 +119,7 @@ const onClickSearch = () => {
         font-size: 12px;
         text-overflow: unset;
         @include ellipsis;
+        cursor: pointer;
       }
     }
     .tool {

@@ -10,7 +10,7 @@
     <ul class="indicators">
       <li 
         v-for="(item, index) in banners" :key="item.typeTitle" @click="onClickIndicator(index)"
-        :class="['indicator-dot', activeIndex==index?'active':'']" ></li>
+        :class="['indicator-dot', activeIndex == index ? 'active' : '']" ></li>
     </ul>
     <!-- 控制器 -->
     <button class="btn btn-prev" @click="onPrev">
